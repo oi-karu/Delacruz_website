@@ -1,1 +1,173 @@
-welcome to my world
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Computer Science Student</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Background animations */
+        @keyframes slow-pan {
+            0% { transform: scale(1.05) translate(0%, 0%); }
+            100% { transform: scale(1.1) translate(2%, 2%); }
+        }
+        @keyframes slow-pan-reverse {
+            0% { transform: scale(1.1) translate(2%, 2%); }
+            100% { transform: scale(1.05) translate(0%, 0%); }
+        }
+        @keyframes slow-zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        /* Custom background styles */
+        .bg-overlay {
+            background-color: rgba(245, 247, 250, 0.85);
+            overflow: hidden;
+        }
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            filter: blur(4px);
+        }
+        .bg-image-1 {
+            background-image: url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000&q=80');
+            animation: slow-pan 30s ease-in-out infinite alternate;
+        }
+        .bg-image-2 {
+            background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
+            animation: slow-pan-reverse 45s ease-in-out infinite alternate;
+            opacity: 0.15;
+        }
+        .bg-image-3 {
+            background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=2000&q=80');
+            animation: slow-zoom 60s ease-in-out infinite alternate;
+            opacity: 0.1;
+        }
+
+        /* Fade in animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.7s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="min-h-screen bg-background relative">
+        <!-- Background with code/coder images -->
+        <div class="bg-overlay absolute inset-0 z-0">
+            <div class="bg-image bg-image-1"></div>
+            <div class="bg-image bg-image-2"></div>
+            <div class="bg-image bg-image-3"></div>
+        </div>
+        
+        <!-- Content with overlay -->
+        <div class="relative z-10 min-h-screen">
+            <div class="max-w-5xl mx-auto pt-16">
+                <!-- Profile Section -->
+                <div class="flex flex-col items-center justify-center min-h-[80vh] px-6 md:px-12 py-12">
+                    <div class="profile-container mb-8 transition-transform duration-200 ease-out hover:scale-105">
+                        <div class="p-1 rounded-full bg-gradient-to-r from-blue-500/80 to-blue-500">
+                            <img 
+                                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&h=300" 
+                                alt="Alex Johnson profile" 
+                                class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg transition-all duration-300 hover:shadow-xl"
+                            />
+                        </div>
+                    </div>
+                    
+                    <div class="text-center animate-fade-in">
+                        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Alex Johnson</h1>
+                        <p class="text-lg md:text-xl text-gray-600 mb-6">Computer Science Student</p>
+                        
+                        <div class="w-16 h-1 bg-blue-500 mx-auto mt-2 mb-8 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Bio Section -->
+                <section class="max-w-2xl mx-auto px-6 py-16 md:py-20">
+                    <div class="bg-white/80 backdrop-blur-lg border border-white/20 shadow-sm p-8 md:p-10 rounded-2xl transition-all duration-700 ease-out">
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-center">About Me</h2>
+                        <p class="text-gray-700 leading-relaxed text-center">
+                            I'm a passionate computer science student with a focus on web development and artificial intelligence. 
+                            Currently in my junior year at University, I enjoy building beautiful and functional applications that solve real-world problems. 
+                            When I'm not coding, you can find me hiking, reading, or experimenting with new technologies.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Social Links -->
+                <div class="flex flex-col items-center justify-center max-w-md mx-auto px-6 py-12">
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center">Connect With Me</h2>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a
+                            href="https://github.com/yourusername"
+                            target="_blank"
+                            class="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 hover:border-blue-500 hover:text-blue-500 hover:scale-105 bg-white/60 backdrop-blur-sm"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a
+                            href="mailto:your.email@example.com"
+                            class="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 hover:border-blue-500 hover:text-blue-500 hover:scale-105 bg-white/60 backdrop-blur-sm"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Button -->
+                <div class="w-full max-w-xs mx-auto text-center py-12 mb-8">
+                    <a
+                        href="mailto:your.email@example.com"
+                        class="inline-flex items-center justify-center px-8 py-4 bg-blue-500 text-white rounded-full hover:scale-105 hover:shadow-lg transition-all"
+                    >
+                        <span class="flex items-center gap-2">
+                            Get in touch
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                
+                <footer class="py-6 text-center text-sm text-gray-500">
+                    <p>&copy; 2024 Alex Johnson. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some interactivity if needed
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.animationDelay = `${index * 0.2}s`;
+                    element.classList.add('opacity-100');
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
