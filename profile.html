@@ -1,12 +1,211 @@
 
-<link rel="stylesheet" href="style.css">
-<section class="max-w-2xl mx-auto px-6 py-16 md:py-20">
-                    <div class="bg-white/80 backdrop-blur-lg border border-white/20 shadow-sm p-8 md:p-10 rounded-2xl transition-all duration-700 ease-out">
-                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-center">About Me</h2>
-                        <p class="text-gray-700 leading-relaxed text-center">
-                            I'm a passionate computer programming student with a focus on web development and artificial intelligence. 
-                            Currently in 11th grade at San Beda College Alabang, I enjoy building beautiful and functional applications that solve real-world problems. 
-                            When I'm not coding, you can find me gaming, reading, listening to music, or experimenting with new technologies.
-                        </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Alfredo Matteo Dela Cruz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Background styles */
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .bg-image {
+            position: absolute;
+            opacity: 0.05;
+            filter: blur(1px);
+        }
+        
+        .bg-image-1 {
+            background-image: url('https://images.unsplash.com/photo-1516259762381-22954d7d3ad2');
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            transform: scale(1.1);
+        }
+        
+        .bg-image-2 {
+            background-image: url('https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81');
+            background-size: cover;
+            top: 20%;
+            right: -5%;
+            width: 60%;
+            height: 60%;
+            transform: rotate(15deg);
+        }
+        
+        .bg-image-3 {
+            background-image: url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe');
+            background-size: cover;
+            bottom: -5%;
+            left: -5%;
+            width: 50%;
+            height: 50%;
+            transform: rotate(-15deg);
+        }
+        
+        /* Mobile menu toggle */
+        #mobile-menu {
+            display: none;
+        }
+        
+        #mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="min-h-screen bg-background relative">
+        <!-- Background with code/coder images -->
+        <div class="bg-overlay absolute inset-0 z-0">
+            <div class="bg-image bg-image-1"></div>
+            <div class="bg-image bg-image-2"></div>
+            <div class="bg-image bg-image-3"></div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo/Name -->
+                    <div class="font-bold text-lg text-blue-500">
+                        <a href="index.html" class="flex items-center space-x-2">
+                            <span>AMD</span>
+                        </a>
                     </div>
-                </section>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="py-2 text-gray-700 hover:text-blue-500 font-medium">Home</a>
+                        <a href="profile.html" class="py-2 text-gray-700 hover:text-blue-500 font-medium">Profile</a>
+                        <a href="hobbies.html" class="py-2 text-gray-700 hover:text-blue-500 font-medium">Hobbies</a>
+                        <a href="contact.html" class="py-2 text-gray-700 hover:text-blue-500 font-medium">Contact</a>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden bg-white mobile-menu shadow-md absolute w-full">
+                <div class="px-4 py-3 space-y-2">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-500 font-medium">Home</a>
+                    <a href="profile.html" class="block py-2 text-gray-700 hover:text-blue-500 font-medium">Profile</a>
+                    <a href="hobbies.html" class="block py-2 text-gray-700 hover:text-blue-500 font-medium">Hobbies</a>
+                    <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-500 font-medium">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="max-w-5xl mx-auto pt-8 relative z-10">
+            <!-- Profile Section -->
+            <div id="profile" class="flex flex-col items-center justify-center min-h-[50vh] px-6 md:px-12 py-12">
+                <div class="profile-container mb-8 transition-transform duration-200 ease-out hover:scale-105">
+                    <div class="p-1 rounded-full bg-gradient-to-r from-blue-500/80 to-blue-500">
+                        <img 
+                            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&h=300" 
+                            alt="Alfredo Matteo Dela Cruz profile" 
+                            class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg transition-all duration-300 hover:shadow-xl"
+                        />
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-gray-900">Alfredo Matteo Dela Cruz</h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-6 font-medium">Computer Science Student</p>
+                    
+                    <div class="w-16 h-1 bg-blue-500 mx-auto mt-2 mb-8 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Bio Section -->
+            <section class="max-w-2xl mx-auto px-6 py-12">
+                <div class="bg-white/90 backdrop-blur-lg border border-white/20 shadow-sm p-8 md:p-10 rounded-2xl transition-all duration-700 ease-out">
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-center text-gray-900">About Me</h2>
+                    <p class="text-gray-800 leading-relaxed text-lg mb-6">
+                        I'm a passionate computer programming student with a focus on web development and artificial intelligence. 
+                        Currently in 11th grade at San Beda College Alabang, I enjoy building beautiful and functional applications that solve real-world problems. 
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Education</h3>
+                    <ul class="text-gray-800 leading-relaxed space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>San Beda College Alabang (2020-Present)</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Skills</h3>
+                    <ul class="text-gray-800 leading-relaxed space-y-2">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>Web Development (HTML, CSS, JavaScript, React)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>Python Programming</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-600 p-1 rounded-full mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>UI/UX Design</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="py-8 text-center text-sm text-gray-600">
+                <p>&copy; 2024 Alfredo Matteo Dela Cruz. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Toggle mobile menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
